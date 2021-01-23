@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApp1.LoginWindow" x:Name="MainLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:viewmodels ="clr-namespace:WpfApp1.ViewModels"
+        xmlns:views="clr-namespace:WpfApp1.Views"
+        mc:Ignorable="d"
+        Icon="Resources/Apteka.png"
+        Title="MainWindow" MinHeight="700" MinWidth="700" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate x:Name="loginViewModel" DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginControl DataContext="{Binding}"></views:LoginControl>
+        </DataTemplate>
+        <DataTemplate x:Name="registrationViewModel" DataType="{x:Type viewmodels:RegistrationViewModel}">
+            <views:RegistrationControl DataContext="{Binding}"></views:RegistrationControl>
+        </DataTemplate>
+    </Window.Resources>
+    <Border CornerRadius="30" Margin="30" Background="#5F9EA0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition MaxHeight="60"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="{Binding SelectedViewModel}" Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="5"></ContentControl>
+            <StackPanel  Orientation="Horizontal" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                <Button x:Name="LoginButton" Command="{Binding UpdateViewCommand}"
+                    Background="#FFC0E9EA" CommandParameter="Login" Content="Вход" Width="120" Height="40" Margin="0,0,30,0"></Button>
+                <Button x:Name="RegistrationButton" Command="{Binding UpdateViewCommand}" CommandParameter="Registration"
+                    Background="#FFC0E9EA" Content="Регистрация" Width="120" Height="40"></Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

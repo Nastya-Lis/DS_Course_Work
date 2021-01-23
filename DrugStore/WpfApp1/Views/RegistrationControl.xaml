@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WpfApp1.Views.RegistrationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="800" FontSize="14">
+
+    <Border Background="#5F9EA0" CornerRadius="50" Margin="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="10" Grid.Column="1" VerticalAlignment="Center">
+                <Label Content="Твоя Аптечка" Foreground ="#FF9340" FontWeight="Bold" 
+                       FontSize ="30" HorizontalAlignment="Center" Margin="15">
+                </Label>
+
+
+                <Label Content="Регистрация" Foreground="Wheat" FontSize="55" HorizontalAlignment="Center" />
+
+                <Label Content="Имя" MaxWidth="700" Foreground="Wheat" FontSize="18" Margin="50,2,50,0"/>
+                <TextBox Name="UserName" MaxWidth="700" FontSize="20" Foreground="DarkSalmon" Margin="50,0,50,0"></TextBox>
+                <Label Content="Email" MaxWidth="700" Foreground="Wheat" FontSize="18" Margin="50,2,50,0"/>
+                <TextBox Name="Email" MaxWidth="700" FontSize="20" Foreground="DarkSalmon" Margin="50,0,50,0"></TextBox>
+                <Label Content="Пароль" MaxWidth="700" Foreground="Wheat" FontSize="18" Margin="50,2,50,0"/>
+                <PasswordBox Name="Password" MaxWidth="700"  FontSize="20" Foreground="DarkSalmon" Margin="50,0,50,0"></PasswordBox>
+                <Label Content="Повторите пароль" MaxWidth="700" Foreground="Wheat" FontSize="18" Margin="50,2,50,0"/>
+                <PasswordBox Name="PasswordRepit" MaxWidth="700" FontSize="20" Foreground="DarkSalmon" Margin="50,0,50,0"></PasswordBox>
+                <Button x:Name="RegistrationButton" MaxWidth="700" Content="Регистрация"  Background="#FFC0E9EA"
+                        Margin ="120 30" FontSize="20"  Click="RegistrationButton_Click"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+
+</UserControl>
